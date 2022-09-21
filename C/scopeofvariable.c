@@ -1,5 +1,5 @@
 #include<stdio.h>
-int fun();
+int func();
 
 int var = 20;
 
@@ -11,11 +11,11 @@ int main()
         printf("%d\n", var);
     }
     printf("%d\n",var);
-    fun();
+    func();
     return 0;
 }
 
-int fun()
+int func()
 {
     printf("%d",var);
 }

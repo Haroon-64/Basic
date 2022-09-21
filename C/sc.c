@@ -7,7 +7,7 @@ int main()
     int c = ++a || b++;
     int d = b-- && --a;
 
-    printf("%d %d %d %d",d,c,b,a);
+    printf("%d %d %d %d",a,b,c,d);
 
 }
-//short circuit
+//short circuit?
