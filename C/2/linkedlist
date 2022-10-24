@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//linked list is a data structure that contains a group of nodes
+//each node contains data and a pointer to the next node
+//the last node points to NULL
+//the first node is called the head
+//the last node is called the tail
+//the head is the only node that can be accessed directly
+
+//linked lists are self referential structures
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+
+    struct node *head = &n1;
+
+    struct node n1,n2;
+
+    n1.data = 10;
+    n1.next = &n2;
+    n2.data = 20;
+    n2.next = NULL;
+
+    printf("%d %d",n1.data,n2.data);
+    
+}
