@@ -150,7 +150,313 @@ def lists():
     print(sorted(numbers ,key=str.lower))                              #return sorted list without modifying original list
     print(numbers)                                                    #print original list
     print(numbers.sort())                                             #sort list and return None
+    
+        #tupples are immutable\non-modifiable lists
+def tupples():
+
+    tupple1 = (1,2,3,4,5,"string")                   #define tupple
+    tupple1 = tupple1 + (1,2,3)                      #concatenate tupple with (1,2,3)
+    tupple1 = tupple1 * 2                            #concatenate tupple with itself
+    print( 1 in tupple1)                            #print if 1 is in tupple
+    print( tupple1[2])                              #print element at index 2
+    tupple1[1:1] = [0,3]                               #insert [0,3] at index 1
+    #work similar to strings
+    len.tupple1()                                    #return length of tupple     #len(list1) returns length of list
+    
+    #dictionaries are key:value pairs
+def dictionaries():
+
+    dict1 = {'a':1,'b':2,'c':3}                      #define dictionary  (keys must be unique)      key : value    key can be any immutable type    value can be any type  
+    dict1['d'] = 4                                   #add key:value pair
+    dict1['a'] = 5                                   #change value of key 'a'
+    dict1.update({'e':5})                            #add key:value pair
+    dict1.pop('a')                                   #remove key:value pair
+    dict1.popitem()                                  #remove last key:value pair
+    dict1.clear()                                    #clear dictionary
+    dict1.copy()                                     #return copy of dictionary
+    dict1.keys()                                     #return list of keys
+    dict1.values()                                   #return list of values
+    dict1.items()                                    #return list of key:value pairs
+    dict1.get('a')                                   #return value of key 'a'
+    dict1.setdefault('a',1)                          #return value of key 'a' if it exists else add key:value pair and return value
+    dict1.fromkeys(['a','b','c'],1)                  #return dictionary with keys ['a','b','c'] and values 1
+    print(list(dict1.keys))                          #print list of keys
+    print('a' in dict1)                              #print if key 'a' is in dictionary
+    print(dict1['a'])                                #print value of key 'a'
+    print(dict1.get('a'))                            #print value of key 'a'
+    print(dict1.get('a',1))                          #print value of key 'a' if it exists else return 1(default value)
+    print(dict1.setdefault('a',1))                   #print value of key 'a' if it exists else add key:value pair and return value
+    print(dict1.setdefault('a',2))                   #print value of key 'a' if it exists else add key:value pair and return value
+    print(dict1)                                     #print dictionary
+    print(dict1.setdefault('a',2))                   #print value of key 'a' if it exists else add key:value pair and return value
+    print(dict1)                                     #print dictionary
+    print(dict1.setdefault('a',3))                   #print value of key 'a' if it exists else add key:value pair and return value
+    print(dict1)                                     #print dictionary
+    print(dict1.setdefault('a',4))                   #print value of key 'a' if it exists else add key:value pair and return value
+    print(dict1)                                     #print dictionary
+    del dict1['a']                                   #remove key:value pair
+    dict2 = dict1.copy()                             #copy dictionary to dictionary2
+    
+#sets   
+# sets are unordered collections of unique elements    ~mathematical sets
+def sets():
+ 
+    set1 = {1,2,3,4,5}                               #define set
+    set1.add(6)                                      #add 6 to set
+    set1.update([7,8,9])                             #add [7,8,9] to set
+    set1.remove(1)                                   #remove 1 from set
+    set1.discard(2)                                  #remove 2 from set
+    set1.pop()                                       #remove random element from set
+    set1.clear()                                     #clear set
+    set1.copy()                                      #return copy of set
+    set1.union({1,2,3})                              #return union of set1 and {1,2,3}
+    set1.update({1,2,3})                             #update set1 with union of set1 and {1,2,3}
+    set1.intersection({1,2,3})                       #return intersection of set1 and {1,2,3}
+    set1.intersection_update({1,2,3})                #update set1 with intersection of set1 and {1,2,3}
+    set1.difference({1,2,3})                         #return difference of set1 and {1,2,3}
+    set1.difference_update({1,2,3})                  #update set1 with difference of set1 and {1,2,3}
+    set1.symmetric_difference({1,2,3})               #return symmetric difference of set1 and {1,2,3}
+    set1.symmetric_difference_update({1,2,3})        #update set1 with symmetric difference of set1 and {1,2,3}
+    set1.issubset({1,2,3})                           #return if set1 is subset of {1,2,3}
+    set1.issuperset({1,2,3})                         #return if set1 is superset of {1,2,3}
+    set1.isdisjoint({1,2,3})                         #return if set1 is disjoint with {1,2,3}
+    set1 = {1,2,3,4,5}
+    set2 = {1,2,3}
+
+    print(set1.union(set2))                          #return union of set1 and set2
+    print(set1 | set2)                               #return union of set1 and set2
+    print(set1 & set2)                               #return intersection of set1 and set2
+    print(set1 - set2)                               #return difference of set1 and set2
+    print(set1 ^ set2)                               #return symmetric difference of set1 and set2
+    print(set1 <= set2)                              #return if set1 is subset of set2
+    print(set1 >= set2)                              #return if set1 is superset of set2
+
+#functions  code that runs when called
+def functions(variable = 1):                         #define function with default value of variable = 1
+    #code
+    #variable changes are local to function unless returned or for muutable types
+    return variable  #doesnt print variable
+
+#nested functions
+def nested_functions():
+    variable1 = 1
+    def nested():
+        nonlocal variable1                         #use variable1 from outer function
+        #code
+        nested()                                #call nested function  local to nested_functions
+
+#closure  function that returns another function     
+def closure():
+    variable1 = 1
+    def nested():
+        nonlocal variable1                         #use variable1 from outer function
+        #code
+        return variable1
+    return nested()                                 #return nested function     
+
+#objects
+#" . "access attributes and methods/functions related to object
+print(id(object))                                   #print id of object
+item = [1,2,3]
+for i in item:                                    #loop through object
+    print(i)
+
+for i in range(len(item)):                        #loop through object
+    print(item[i])
+
+for i,j in enumerate(item):                       #print index and value of object
+    print(i,j)
+
+#break and continue
+for i in range(10):
+    if i == 5:
+        break                                   #break out of loop
+    print(i)
+
+for i in range(10):
+    if i == 5:
+        continue                              #skip current iteration
+    print(i)
+
+#classes    USER DEFINED OBJECTS
+class ClassName1:
+    def __init__(self,variable1,variable2):     #define class     self is instance of class    __init__ is constructor of class  variables are attributes of class
+        self.variable1 = variable1              #define attributes of class
+        self.variable2 = variable2             
+        #code
+        def method2(self):                          #define method
+            x=1
+
+#inheritance  inherit attributes and methods from parent class
+class ClassName2(ClassName1):                     #define class that inherits from ClassName2
+    def __init__(self,variable1,variable2):     #define class 
+        super().__init__(variable1,variable2)   #call __init__ of ClassName1
+        #code
+
+#modules   python files
+#import code from other files
+import test    
+
+from lib import function1                       #import function1 directly from test.py in lib folder
+
+test.function1()                                 #call function1 from test.py  
+#if file is in subfolder create __init__.py file in subfolder and import from subfolder
+#innit.py file can be empty or contain code to run when imported
+#it tells python that folder is a package/modules folder
+#standard library  https://docs.python.org/3/library/index.html
+#third party libraries  https://pypi.org/
+def libr(): # common standard libraries  
+        #sqlite3 database library https://docs.python.org/3/library/sqlite3.html
+        #statistics library https://docs.python.org/3/library/statistics.html
+        #requests library https://docs.python.org/3/library/urllib.request.html
+        
+        #os  operating system  https://docs.python.org/3/library/os.html
+        #sys  system specific parameters and functions  https://docs.python.org/3/library/sys.html
+        #math  math functions  https://docs.python.org/3/library/math.html
+        #random  random number generator  https://docs.python.org/3/library/random.html
+        #datetime  date and time https://docs.python.org/3/library/datetime.html
+        #collections  collections of data  https://docs.python.org/3/library/collections.html
+        #itertools  iterators for efficient looping  https://docs.python.org/3/library/itertools.html
+        #functools  functional programming tools  https://docs.python.org/3/library/functools.html
+        #threading  threading module  https://docs.python.org/3/library/threading.html
+        #multiprocessing  multiprocessing module  https://docs.python.org/3/library/multiprocessing.html
+        #subprocess  subprocess module  https://docs.python.org/3/library/subprocess.html
+        #socket  socket module  https://docs.python.org/3/library/socket.html
+        #json  json module  https://docs.python.org/3/library/json.html
+        #csv  csv module  https://docs.python.org/3/library/csv.html 
+        #re  regular expressions https://docs.python.org/3/library/re.html
+        #logging  logging   https://docs.python.org/3/library/logging.html
+        #argparse  command line arguments https://docs.python.org/3/library/argparse.html
+        #configparser  configuration files https://docs.python.org/3/library/configparser.html
+        #unittest  unit testing  https://docs.python.org/3/library/unittest.html
+        #doctest  doctest module  https://docs.python.org/3/library/doctest.html
+        #pdb  pdb module  https://docs.python.org/3/library/pdb.html 
+        #timeit  timeit module  https://docs.python.org/3/library/timeit.html
+        #traceback  traceback module  https://docs.python.org/3/library/traceback.html
+        #tkinter  tkinter module  https://docs.python.org/3/library/tkinter.html
+        #urllib  urllib module  https://docs.python.org/3/library/urllib.html
+        #email  email module  https://docs.python.org/3/library/email.html
+        #http  http module  https://docs.python.org/3/library/http.html
+        #xml  xml module  https://docs.python.org/3/library/xml.html
+        x=0
+#lambda functions  anonymous functions
+#lambda functions are functions that are not bound to a name
+#lambda functions are used to create small anonymous functions
+#lambda functions are used when an argument is expected
+#lambda functions are used inside other functions
+#lambda functions are used when a function is used as an argument to a higher order function
+
+la=lambda x: x+1                                 #lambda function that adds 1 to x
+print(la(1))                                     #call lambda function
+
+#map function  apply function to each item in iterable
+mapl=[1,2,3,4,5]
+
+dour = map(mapl,lambda x : x*2)                           #apply function to each item dou        map(value,function)
+print(list(dour))                             #print result
+#filter function  filter items in iterable
+fl=[1,2,3,4,5]
+filter=filter(fl,lambda x : x%2==0)                 #filter items that are even
+#reduce function  reduce items in iterable to single value
+redul=[1,2,3,4,5]
+r = reduce(redul,lambda x,y : x+y)              #reduce redul to sum r
+
+#factorial function
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+fac=factorial(input("enter number: "))         #by default recursive functions are limited to 1000 iterations
+
+#decorators  add functionality to existing functions
+
+def decorator_function(original_function): 
+    def before():  
+        print('wrapper executed this before {}'.format(original_function.__name__))  
+        return original_function()
+    return before
+
+@decorator_function                           #add decorator to function
+
+def display():
+    print('display function ran')
+    """This is a docstring."""
+display()
+
+#documentation  docstrings
+#docstrings are used to document functions
+"""This is a docstring."""
+print(help(display))                          #print docstring
+#annotations  type hints
+def add(a: int, b: int) -> int:                #input and return(->) type hints  ignore by python   mypy 3rd party library can check type hints and produce error
+    return a + b 
+
+#exceptions  errors
+try:
+    #code that may cause error
+    x=y
+except:                                         #catch all exceptions     except <error>: for specific error                               
+    #code to run if error occurs
+    x=y+1
+else:
+    #code to run if no error occurs
+    print("no error")
+finally:
+    #code to run regardless of error
+    x=y+3
+
+try:
+    raise Exception("error")                        #raise exception   can be defined as a class or a string
+except Exception as error:
+    print(error)                                        #print exception
 
 
+class MyError(Exception):                           #define exception as a class
+    pass                                    #pass is used to define an empty class/function
+
+
+file=open("file.txt","r")                           
+content=file.read()                                
+print(content)                                    
+file.close()    
+
+with open("file2.txt","r") as file:                  #with  implicitly closes file
+    content=file.read()                            
+    print(content)
+#list comprehension  create list from iterable
+list=[1,2,3,4,5]
+newlist=[x*2 for x in list]                         #create new list from list   
+print(newlist)
+#polymorphism  same function name different functionality
+class Dog:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def speak(self):
+        return self.name+" says woof!"
+class Cat:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def speak(self):
+        return self.name+" says meow!"
+
+niko=Dog("niko",8)
+felix=Cat("felix",12)
+def __gt__(self,other):
+    return True if self.age>other.age else False
+
+print(niko>felix)                                   #compare objects
+
+print(niko.speak())
+print(felix.speak())
+
+#function overloading  same function name different functionality
+def add(x,y,z=0):                                   #default value for z
+    return x+y+z
+print(add(1,2))
+print(add(1,2,3))
+   
 
 
