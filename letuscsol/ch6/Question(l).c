@@ -1,5 +1,4 @@
-/*Write a program to produce the following output:
-goto pdf; */
+/*Write a program to print pascals triangle*/
 #include<stdio.h>
 int main()
 {
