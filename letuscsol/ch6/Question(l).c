@@ -1,6 +1,6 @@
 //try again
 
-/*Write a program to print pascals triangle*/
+/*Write a program to print pascals triangle (pattern)*/
 #include<stdio.h>
 int main()
 {
