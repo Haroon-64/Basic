@@ -1,5 +1,5 @@
-/*The natural logarithm can be approximated by the following series
-(goto pdf;) 
+/*The natural logarithm can be approximated by series
+
 If x is input through the keyboard, write a program to 
 calculate the sum of first seven terms of this series.*/
 #include<stdio.h>
