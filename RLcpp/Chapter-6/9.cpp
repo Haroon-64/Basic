@@ -7,7 +7,7 @@ that allows the user to repeatedly input two fractions and then displays their s
 each operation, ask whether the user wants to continue.
 */
 
-// author @Nishant
+
 
 #include<iostream>
 
