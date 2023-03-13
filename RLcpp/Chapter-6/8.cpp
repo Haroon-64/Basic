@@ -12,7 +12,6 @@ write a main() program that creates three objects and queries each one about its
 number. They should respond I am object number 2 , and so on.
 */
 
-// author @Nishant
 
 #include <iostream>
 
