@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double x, y, z;
+    cout << "Enter a number: ";
+    cin >> x;
+    y = x;
+    z = 1;
+    while (y - z > 0.000001)
+    {
+        y = (y + z) / 2;
+        z = x / y;
+    }
+    cout << "Square root of " << x << " is " << y;
+    return 0;
+}
