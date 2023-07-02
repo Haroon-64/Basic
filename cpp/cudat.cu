@@ -1,5 +1,5 @@
-#include "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include\cuda_runtime.h"
-#include "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include\device_launch_parameters.h"
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 
 #include <iostream>
 using namespace std;
